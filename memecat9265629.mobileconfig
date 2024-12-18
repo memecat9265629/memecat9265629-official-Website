@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>PayloadContent</key>
+        <array>
+            <dict>
+                <key>PayloadDisplayName</key>
+                <string>memecat9265629 DNS</string>
+                <key>PayloadDescription</key>
+                <string>hello guys it’s will DNS Rating 6.1/10</string>
+                <key>PayloadIdentifier</key>
+                <string>com.yourcompany.dnssettings</string>
+                <key>PayloadType</key>
+                <string>Configuration</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+                <key>PayloadOrganization</key>
+                <string>Your Company Name</string>
+                <key>PayloadUUID</key>
+                <string>UUID-OF-THE-PROFILE</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadScope</key>
+                <string>System</string>
+                <key>PayloadType</key>
+                <string>com.apple.network.configuration</string>
+                <key>PayloadOrganization</key>
+                <string>Your Company Name</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+                <key>PayloadIdentifier</key>
+                <string>com.yourcompany.dnssettings</string>
+                <key>PayloadUUID</key>
+                <string>UUID-OF-THE-PROFILE</string>
+                <key>PayloadType</key>
+                <string>Configuration</string>
+                <key>PayloadContent</key>
+                <array>
+                    <dict>
+                        <key>DomainName</key>
+                        <string>*</string>
+                        <key>ServerAddresses</key>
+                        <array>
+                            <string>8.8.8.8</string> <!-- Google DNS -->
+                            <string>1.1.1.1</string> <!-- Cloudflare DNS -->
+                        </array>
+                    </dict>
+                </array>
+            </dict>
+        </array>
+    </dict>
+</plist>
