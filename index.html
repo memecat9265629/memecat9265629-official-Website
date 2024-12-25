@@ -3,228 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation & Tabs Example</title>
+    <title>Profile Card</title>
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
+    body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-}
-
-.navbar {
-    background-color: #333;
-    color: #fff;
     display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar .hamburger {
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
-}
-
-.nav-links {
-    list-style-type: none;
-    display: flex;
-    gap: 1rem;
-}
-
-.nav-links li {
-    display: inline-block;
-}
-
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.nav-links a.active {
-    font-weight: bold;
-}
-
-.tab-content {
-    display: none;
-    padding: 2rem;
-    background-color: white;
-    margin-top: 4rem;
-}
-
-.tab-content.active {
-    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 .card {
-    background-color: #fff;
-    padding: 1rem;
+    background-color: white;
     border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     text-align: center;
+    width: 300px;
+    overflow: hidden;
 }
 
-.card img {
+.profile-image {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .card-title {
-    font-weight: bold;
-    margin-top: 0.5rem;
+    margin: 10px 0;
+    font-size: 24px;
+    color: #333;
 }
 
 .card-bio {
-    margin-top: 0.5rem;
+    font-size: 16px;
     color: #666;
+    margin-bottom: 20px;
+}
+
+.app-list-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .app-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 10px 0;
 }
 
 .app-item {
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 10px;
     text-align: center;
-    width: calc(33.33% - 1rem);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100px;
 }
 
 .app-item img {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 .app-name {
-    margin-top: 0.5rem;
-    font-weight: bold;
+    font-size: 14px;
+    color: #333;
 }
 
-.app-button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #007BFF;
-    color: #fff;
+.nav-button {
+    background-color: #007bff;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50%;
     cursor: pointer;
-    margin-top: 0.5rem;
+    padding: 10px;
+    margin: 0 5px;
 }
 
-.app-button:hover {
+.nav-button:hover {
     background-color: #0056b3;
 }
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #333;
-        width: 100%;
-    }
-
-    .nav-links li {
-        text-align: center;
-    }
-
-    .nav-links a {
-        padding: 1rem;
-        display: block;
-    }
-}
-
 </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="hamburger" onclick="toggleNav()">&#9776;</div>
-        <ul class="nav-links">
-            <li><a href="#" class="nav-link" data-tab="home">HOME</a></li>
-            <li><a href="#" class="nav-link" data-tab="app-list">App List</a></li>
-            <li><a href="#" class="nav-link" data-tab="credits">CREDITS</a></li>
-            <li><a href="#" class="nav-link" data-tab="profile">Profile</a></li>
-        </ul>
-    </nav>
-
-    <!-- Content Sections -->
-    <div id="home-tab" class="tab-content active">
-        <div class="card">
-            <img src="your-profile-image.jpg" alt="Profile Image">
-            <div class="card-title">Your Name</div>
-            <div class="card-bio">Your bio goes here...</div>
-        </div>
-
-        <div class="app-list">
-            <div class="app-item">
-                <img src="app-image.jpg" alt="App Image">
-                <div class="app-name">App Name</div>
-                <button class="app-button">Get</button>
+    <div class="card">
+        <img src="profile-image.jpg" alt="Profile Image" class="profile-image">
+        <h2 class="card-title">Your Name</h2>
+        <p class="card-bio">This is your bio description, a short introduction about you.</p>
+        <div class="app-list-container">
+            <button class="nav-button left" onclick="scrollApps(-1)">&#x276E;</button>
+            <div class="app-list">
+                <div class="app-item">
+                    <img src="app1.jpg" alt="App 1 Image">
+                    <p class="app-name">App 1</p>
+                </div>
+                <div class="app-item">
+                    <img src="app2.jpg" alt="App 2 Image">
+                    <p class="app-name">App 2</p>
+                </div>
+                <div class="app-item">
+                    <img src="app3.jpg" alt="App 3 Image">
+                    <p class="app-name">App 3</p>
+                </div>
+                <!-- Add more app items as needed -->
             </div>
-            <!-- Repeat for more apps -->
+            <button class="nav-button right" onclick="scrollApps(1)">&#x276F;</button>
         </div>
-    </div>
-
-    <div id="app-list-tab" class="tab-content">
-        <div class="app-item">
-            <img src="app-image-1.jpg" alt="App Image">
-            <div class="app-name">App Name 1</div>
-            <button class="app-button">Get</button>
-        </div>
-        <!-- Repeat for more apps -->
-    </div>
-
-    <div id="credits-tab" class="tab-content">
-        <h2>Credits</h2>
-        <p>Information about credits goes here.</p>
-    </div>
-
-    <div id="profile-tab" class="tab-content">
-        <h2>Profile</h2>
-        <img src="your-profile-image.jpg" alt="Profile Image">
-        <h3>Your Name</h3>
-        <p>Your bio goes here...</p>
     </div>
 
     <script>
-      function toggleNav() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-}
-
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Remove active class from all links and tabs
-        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-
-        // Add active class to clicked link and corresponding tab
-        this.classList.add('active');
-        const tabId = this.getAttribute('data-tab');
-        document.getElementById(tabId + '-tab').classList.add('active');
+        function scrollApps(direction) {
+    const appList = document.querySelector('.app-list');
+    const scrollAmount = 100; // How much to scroll on each button click
+    appList.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
     });
-});
+}
     </script>
 </body>
 </html>
